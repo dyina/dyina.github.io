@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy / プライバシーポリシー</title>
+<style>
+  body { font-family: sans-serif; margin: 2em; line-height: 1.6; }
+  h1 { color: #333; }
+  .lang-btn { margin: 10px 5px; padding: 5px 10px; cursor: pointer; }
+</style>
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = (el.getAttribute('data-lang') === lang) ? 'block' : 'none';
+  });
+}
+document.addEventListener('DOMContentLoaded', () => {
+  switchLang('en'); // default English
+});
+</script>
+</head>
+<body>
+
+<h1>Privacy Policy / プライバシーポリシー</h1>
+<div>
+  <button class="lang-btn" onclick="switchLang('en')">English</button>
+  <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+</div>
+
+<!-- English version -->
+<div data-lang="en">
+<p><strong>Last updated:</strong> August 9, 2025</p>
+
+<h2>1. Controller Information</h2>
+<p>The website operator (“we”, “us”) is [Your Name or Company Name], located at [Address], email: [Contact Email].</p>
+
+<h2>2. Basic Policy</h2>
+<p>We comply with Japan’s Act on the Protection of Personal Information (APPI) and other applicable laws. We strive to protect personal information through proper management and security measures.</p>
+
+<h2>3. Definitions</h2>
+<p>In this policy, “personal information” means information that can identify an individual, such as name, email address, and device identifiers.</p>
+
+<h2>4. Information We Collect</h2>
+<ul>
+  <li>Information provided via contact forms (name, email, message content)</li>
+  <li>Automatically collected data via server logs (IP address, browser type, access date/time)</li>
+  <li>Device identifiers and advertising IDs collected through AdMob</li>
+</ul>
+
+<h2>5. Purpose of Use</h2>
+<ul>
+  <li>Responding to inquiries and providing support</li>
+  <li>Operating, maintaining, and improving our services</li>
+  <li>Displaying and optimizing advertisements through Google AdMob</li>
+</ul>
+
+<h2>6. Use of Google AdMob</h2>
+<p>We use Google AdMob, a mobile advertising platform provided by Google LLC, to display ads in our apps.  
+AdMob may automatically collect and process information such as your Advertising ID, IP address, and usage data in order to serve personalized or non-personalized ads.</p>
+<p>For more details, please refer to the <a href="https://policies.google.com/technologies/ads" target="_blank">Google Advertising Policy</a> and <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p>
+<p>You can opt out of personalized advertising by adjusting the ad settings on your device:
+<ul>
+  <li>Android: Settings → Google → Ads → Opt out of Ads Personalization</li>
+  <li>iOS: Settings → Privacy → Tracking → Allow Apps to Request to Track (disable)</li>
+</ul>
+</p>
+
+<h2>7. Data Retention</h2>
+<p>We retain personal information only for as long as necessary to fulfill the purposes stated above, or as required by law. After the retention period, the information will be securely deleted or anonymized.</p>
+
+<h2>8. Third-Party Disclosure</h2>
+<p>We will not provide personal information to third parties except:</p>
+<ul>
+  <li>When we have your consent</li>
+  <li>When required by law</li>
+  <li>When necessary for the operation of services (e.g., AdMob by Google LLC)</li>
+</ul>
+
+<h2>9. Security Measures</h2>
+<p>We take reasonable technical, administrative, and physical measures to protect personal information from unauthorized access, loss, misuse, or alteration.</p>
+
+<h2>10. Your Rights</h2>
+<p>Under APPI, you may request disclosure, correction, deletion, or suspension of use of your personal information.  
+Requests should be sent to the contact information below, and we will respond in accordance with applicable laws and regulations.</p>
+
+<h2>11. Policy Changes</h2>
+<p>We may revise this Privacy Policy as necessary. Changes will be effective when posted on this website. Please check this page periodically for updates.</p>
+
+<h2>12. Contact</h2>
+<p>If you have any questions about this Privacy Policy or our handling of personal information, please contact us at:  
+[Contact Email]</p>
+
+<p>© 2025 [Your Name or Company Name]. All rights reserved.</p>
+</div>
+
+<!-- Japanese version -->
+<div data-lang="ja">
+<p><strong>最終更新日:</strong> 2025年8月9日</p>
+
+<h2>1. 管理者情報</h2>
+<p>本サイトの運営者（以下「当方」）は [氏名または会社名]（住所：[住所]、メール：[連絡先メール]）です。</p>
+
+<h2>2. 基本方針</h2>
+<p>当方は、個人情報の保護に関する法律（APPI）および関連法令を遵守し、適切な管理と安全対策により個人情報の保護に努めます。</p>
+
+<h2>3. 定義</h2>
+<p>本ポリシーにおける「個人情報」とは、氏名、メールアドレス、端末識別子など個人を特定できる情報を指します。</p>
+
+<h2>4. 収集する情報</h2>
+<ul>
+  <li>お問い合わせフォームから提供された情報（氏名、メール、メッセージ内容）</li>
+  <li>サーバーログにより自動収集される情報（IPアドレス、ブラウザ種類、アクセス日時）</li>
+  <li>AdMob を通じて収集される端末識別子や広告ID</li>
+</ul>
+
+<h2>5. 利用目的</h2>
+<ul>
+  <li>お問い合わせへの対応やサポート提供</li>
+  <li>サービスの運営・維持・改善</li>
+  <li>Google AdMob による広告表示と最適化</li>
+</ul>
+
+<h2>6. Google AdMobの利用</h2>
+<p>当方は Google LLC が提供するモバイル広告配信プラットフォーム「Google AdMob」を使用し、アプリ内で広告を表示します。  
+AdMob は、広告ID、IPアドレス、利用状況データなどを自動的に収集・処理し、パーソナライズ広告または非パーソナライズ広告を配信します。</p>
+<p>詳細は <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank">Google 広告ポリシー</a> および <a href="https://policies.google.com/privacy?hl=ja" target="_blank">Google プライバシーポリシー</a> をご参照ください。</p>
+<p>パーソナライズ広告を無効化するには、端末の設定から以下の操作を行ってください：
+<ul>
+  <li>Android: 設定 → Google → 広告 → 広告のパーソナライズをオプトアウト</li>
+  <li>iOS: 設定 → プライバシー → トラッキング → Appにトラッキング許可を要求（オフ）</li>
+</ul>
+</p>
+
+<h2>7. 保有期間</h2>
+<p>個人情報は、上記利用目的の達成に必要な期間、または法令で定められた期間のみ保持します。期間終了後は安全に削除または匿名化します。</p>
+
+<h2>8. 第三者提供</h2>
+<p>以下の場合を除き、個人情報を第三者に提供しません：</p>
+<ul>
+  <li>本人の同意がある場合</li>
+  <li>法令に基づく場合</li>
+  <li>サービス運営に必要な場合（例：Google LLC の AdMob）</li>
+</ul>
+
+<h2>9. 安全管理措置</h2>
+<p>当方は、個人情報の漏えい、紛失、改ざん、不正アクセス等を防止するため、合理的な安全管理措置を講じます。</p>
+
+<h2>10. 本人の権利</h2>
+<p>本人は、APPIに基づき、自己の個人情報の開示、訂正、削除、利用停止を請求できます。請求は下記連絡先まで行ってください。</p>
+
+<h2>11. ポリシー変更</h2>
+<p>必要に応じて本ポリシーを改訂することがあります。変更は本ページに掲載した時点で効力を生じます。</p>
+
+<h2>12. お問い合わせ</h2>
+<p>本プライバシーポリシーまたは個人情報の取扱いに関するお問い合わせは以下までお願いします：  
+[連絡先メール]</p>
+
+<p>© 2025 [氏名または会社名]. All rights reserved.</p>
+</div>
+
+</body>
+</html>
