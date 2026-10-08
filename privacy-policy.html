@@ -5,9 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy / プライバシーポリシー</title>
 <style>
-  body { font-family: sans-serif; margin: 2em; line-height: 1.6; }
+  body { font-family: sans-serif; margin: 2em; line-height: 1.6; max-width: 52em; }
   h1 { color: #333; }
   .lang-btn { margin: 10px 5px; padding: 5px 10px; cursor: pointer; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #bbb; padding: 6px 8px; text-align: left; vertical-align: top; font-size: 0.95em; }
+  th { background: #f0f0f0; }
 </style>
 <script>
 function switchLang(lang) {
@@ -28,135 +31,181 @@ document.addEventListener('DOMContentLoaded', () => {
   <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
 </div>
 
-<!-- English version -->
+<!-- ============ English version ============ -->
 <div data-lang="en">
-<p><strong>Last updated:</strong> August 9, 2025</p>
+<p><strong>Last updated:</strong> October 9, 2026</p>
 
-<h2>1. Controller Information</h2>
-<p>The website operator (“we”, “us”) is Dyina, email: dyinarobotics@gmail.com.</p>
+<h2>1. Who We Are</h2>
+<p>The operator of this website and our apps (“we”, “us”) is Dyina, email: dyinarobotics@gmail.com. This policy applies to all apps and websites we publish.</p>
 
 <h2>2. Basic Policy</h2>
-<p>We comply with Japan’s Act on the Protection of Personal Information (APPI) and other applicable laws. We strive to protect personal information through proper management and security measures.</p>
+<p>We comply with Japan’s Act on the Protection of Personal Information (APPI) and other applicable laws, including, for users in the European Economic Area and the United Kingdom, the GDPR. We protect personal information through proper management and security measures.</p>
 
 <h2>3. Definitions</h2>
-<p>In this policy, “personal information” means information that can identify an individual, such as name, email address, and device identifiers.</p>
+<p>“Personal information” means information that can identify an individual or a device, such as name, email address, device identifiers, advertising IDs, IP address, location, and health or fitness data (for example, step counts).</p>
 
-<h2>4. Information We Collect</h2>
+<h2>4. Our Apps and the Data They Use</h2>
+<p>Each app uses only the data types listed for it. An app that is not marked for a data type does not access that data. Details for each data type are in section 5.</p>
+<table>
+<tr><th>App</th><th>Platform</th><th>Health / fitness data (steps)</th><th>Location</th><th>Ads</th><th>Purchases</th></tr>
+<tr><td>Moon Pedometer<br>(com.dyina.moonpedometer)</td><td>Android</td><td>Yes (steps)</td><td>Yes (one time, when you tap the button)</td><td>Google AdMob</td><td>Yes (Google Play)</td></tr>
+<!-- 新しいアプリは、この表に1行足す。新しい種類のデータ（カメラ・連絡先など）を扱う時は、第5項に節を足す -->
+</table>
+
+<h2>5. Data We Handle</h2>
+
+<h3>5.1 Health and fitness data (step counts)</h3>
+<p>Apps marked in the table above read your step counts with your permission, from Health Connect (Android) or Apple Health (iOS), or from the device’s built-in step sensor when those are unavailable. They read daily step totals only, and may read your past step history once, with your permission, to show your total. They do not read other health data and do not write to Health Connect or Apple Health.</p>
 <ul>
-  <li>Information provided via contact forms (name, email, message content)</li>
-  <li>Automatically collected data via server logs (IP address, browser type, access date/time)</li>
-  <li>Device identifiers and advertising IDs collected through AdMob</li>
+  <li><strong>Use:</strong> to show the distance you have walked, records, and badges. We do not use it for advertising, analytics or profiling, and we do not sell it.</li>
+  <li><strong>Storage and sharing:</strong> stored only in the app’s private storage on your device. It is not sent to our servers (these apps have no account or backend) and is not shared with anyone, including advertising providers.</li>
+  <li><strong>Background:</strong> steps are read when you open the app, not in the background.</li>
 </ul>
 
-<h2>5. Purpose of Use</h2>
+<h3>5.2 Location</h3>
+<p>Apps marked in the table may read your location once, only when you tap a button such as “Use my current location”, with the precise or approximate permission you choose. It is used to set a starting point, stored only on your device, and not sent anywhere. The apps do not track your location in the background.</p>
+
+<h3>5.3 Advertising</h3>
+<p>Free versions of our apps show ads through advertising providers: <strong>Google AdMob</strong> (Google LLC) and <strong>Liftoff</strong> (Liftoff Mobile, Inc.), as shown in the table. These providers may automatically collect and process your advertising ID, IP address (and the approximate location derived from it), device information, and ad interaction data to serve, measure and personalize ads. Health, fitness and precise location data are not provided to them.</p>
 <ul>
+  <li><strong>Consent:</strong> where required (for example in the EEA and the UK), the apps show a consent form before ads, and you can change your choice later from the app’s settings.</li>
+  <li><strong>Opt out of personalization:</strong> Android: Settings → Google → Ads → Opt out of Ads Personalization. iOS: Settings → Privacy → Tracking.</li>
+  <li><strong>Details:</strong> <a href="https://policies.google.com/technologies/ads" target="_blank">Google Advertising Policy</a>, <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>, <a href="https://liftoff.io/privacy-policy/" target="_blank">Liftoff Privacy Policy</a>.</li>
+</ul>
+
+<h3>5.4 Purchases</h3>
+<p>In-app purchases are processed by Google Play or the App Store. We do not receive your payment details; we only learn whether a purchase was made.</p>
+
+<h3>5.5 Website and contact</h3>
+<ul>
+  <li>Information you send via contact forms or email (name, email address, message)</li>
+  <li>Server logs (IP address, browser type, access date and time)</li>
+</ul>
+
+<h2>6. Purpose of Use</h2>
+<ul>
+  <li>Providing the features of each app (section 5.1–5.2)</li>
   <li>Responding to inquiries and providing support</li>
   <li>Operating, maintaining, and improving our services</li>
-  <li>Displaying and optimizing advertisements through Google AdMob</li>
+  <li>Displaying and measuring advertisements (section 5.3)</li>
 </ul>
 
-<h2>6. Use of Google AdMob</h2>
-<p>We use Google AdMob, a mobile advertising platform provided by Google LLC, to display ads in our apps.  
-AdMob may automatically collect and process information such as your Advertising ID, IP address, and usage data in order to serve personalized or non-personalized ads.</p>
-<p>For more details, please refer to the <a href="https://policies.google.com/technologies/ads" target="_blank">Google Advertising Policy</a> and <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p>
-<p>You can opt out of personalized advertising by adjusting the ad settings on your device:
-<ul>
-  <li>Android: Settings → Google → Ads → Opt out of Ads Personalization</li>
-  <li>iOS: Settings → Privacy → Tracking → Allow Apps to Request to Track (disable)</li>
-</ul>
-</p>
+<h2>7. Children</h2>
+<p>Our apps are not directed to children under 13 (or the age required by local law), and we do not knowingly collect personal information from children. The target age of each app follows its store listing. If you believe a child has provided personal information, contact us (section 13); we will verify and delete it as required by law.</p>
 
-<h2>7. Data Retention</h2>
-<p>We retain personal information only for as long as necessary to fulfill the purposes stated above, or as required by law. After the retention period, the information will be securely deleted or anonymized.</p>
+<h2>8. Data Retention</h2>
+<p>Data stored by an app on your device stays until you delete it in the app or uninstall the app. Other personal information is kept only as long as necessary for the purposes above or as required by law, then deleted or anonymized.</p>
 
-<h2>8. Third-Party Disclosure</h2>
-<p>We will not provide personal information to third parties except:</p>
+<h2>9. Third-Party Disclosure</h2>
+<p>We do not provide personal information to third parties except:</p>
 <ul>
   <li>When we have your consent</li>
   <li>When required by law</li>
-  <li>When necessary for the operation of services (e.g., AdMob by Google LLC)</li>
+  <li>To the advertising providers and payment platforms listed in section 5, to the extent necessary to show ads and process purchases</li>
 </ul>
 
-<h2>9. Security Measures</h2>
+<h2>10. Security Measures</h2>
 <p>We take reasonable technical, administrative, and physical measures to protect personal information from unauthorized access, loss, misuse, or alteration.</p>
 
-<h2>10. Your Rights</h2>
-<p>Under APPI, you may request disclosure, correction, deletion, or suspension of use of your personal information.  
-Requests should be sent to the contact information below, and we will respond in accordance with applicable laws and regulations.</p>
+<h2>11. Your Rights</h2>
+<p>Under APPI, you may request disclosure, correction, deletion, or suspension of use of your personal information. If you are in the EEA or the UK, you also have the rights of access, rectification, erasure, restriction, objection, data portability, and withdrawal of consent, and the right to complain to your data protection authority. You can also revoke app permissions at any time in your device settings (including Health Connect), reset stored data in the app, or uninstall the app. Send requests to the contact below.</p>
 
-<h2>11. Policy Changes</h2>
-<p>We may revise this Privacy Policy as necessary. Changes will be effective when posted on this website. Please check this page periodically for updates.</p>
+<h2>12. Policy Changes</h2>
+<p>We may revise this policy as necessary. Changes take effect when posted here, with the date updated above. Changes to the data an app handles will be reflected in section 4 and 5 before the change is released.</p>
 
-<h2>12. Contact</h2>
-<p>If you have any questions about this Privacy Policy or our handling of personal information, please contact us at:  
-dyinarobotics@gmail.com</p>
+<h2>13. Contact</h2>
+<p>For questions about this policy or our handling of personal information: dyinarobotics@gmail.com</p>
 
-<p>© 2025 Dyina. All rights reserved.</p>
+<p>© 2025–2026 Dyina. All rights reserved.</p>
 </div>
 
-<!-- Japanese version -->
+<!-- ============ 日本語版 ============ -->
 <div data-lang="ja">
-<p><strong>最終更新日:</strong> 2025年8月9日</p>
+<p><strong>最終更新日:</strong> 2026年10月9日</p>
 
-<h2>1. 管理者情報</h2>
-<p>本サイトの運営者（以下「当方」）は Dyina（メール：dyinarobotics@gmail.com）です。</p>
+<h2>1. 運営者</h2>
+<p>本サイトおよび当方のアプリの運営者（以下「当方」）は Dyina（メール：dyinarobotics@gmail.com）です。本ポリシーは、当方が公開するすべてのアプリとウェブサイトに適用されます。</p>
 
 <h2>2. 基本方針</h2>
-<p>当方は、個人情報の保護に関する法律（APPI）および関連法令を遵守し、適切な管理と安全対策により個人情報の保護に努めます。</p>
+<p>当方は、個人情報の保護に関する法律（APPI）および関連法令（欧州経済領域・英国の利用者については GDPR を含む）を遵守し、適切な管理と安全対策により個人情報の保護に努めます。</p>
 
 <h2>3. 定義</h2>
-<p>本ポリシーにおける「個人情報」とは、氏名、メールアドレス、端末識別子など個人を特定できる情報を指します。</p>
+<p>「個人情報」とは、氏名、メールアドレス、端末識別子、広告ID、IPアドレス、位置情報、健康・フィットネスのデータ（歩数など）といった、個人または端末を特定できる情報を指します。</p>
 
-<h2>4. 収集する情報</h2>
+<h2>4. アプリと、アプリが扱うデータ</h2>
+<p>各アプリは、下の表で「あり」とされたデータ種類だけを扱います。表で該当しないデータ種類には、そのアプリはアクセスしません。データ種類ごとの詳細は第5項に記載します。</p>
+<table>
+<tr><th>アプリ</th><th>対応OS</th><th>健康・フィットネス（歩数）</th><th>位置情報</th><th>広告</th><th>購入</th></tr>
+<tr><td>Moon Pedometer<br>(com.dyina.moonpedometer)</td><td>Android</td><td>あり（歩数）</td><td>あり（ボタンを押した時に1回）</td><td>Google AdMob</td><td>あり（Google Play）</td></tr>
+<!-- 新しいアプリは、この表に1行足す。新しい種類のデータ（カメラ・連絡先など）を扱う時は、第5項に節を足す -->
+</table>
+
+<h2>5. 扱うデータ</h2>
+
+<h3>5.1 健康・フィットネスのデータ（歩数）</h3>
+<p>上の表で「あり」のアプリは、ユーザーの許可を得て、ヘルスコネクト（Android）または Apple ヘルスケア（iOS）から、これらが使えない場合は端末内蔵の歩数センサーから、歩数を読み取ります。読み取るのは1日ごとの歩数の合計だけで、許可を得た場合に限り、これまでの歩数の履歴を1度だけ読み取って総距離を表示します。ほかの健康データは読み取らず、ヘルスコネクト・Apple ヘルスケアへの書き込みもしません。</p>
 <ul>
-  <li>お問い合わせフォームから提供された情報（氏名、メール、メッセージ内容）</li>
-  <li>サーバーログにより自動収集される情報（IPアドレス、ブラウザ種類、アクセス日時）</li>
-  <li>AdMob を通じて収集される端末識別子や広告ID</li>
+  <li><strong>利用目的：</strong>歩いた距離・記録・バッジを表示するためです。広告・解析・プロファイリングには使わず、販売もしません。</li>
+  <li><strong>保存と共有：</strong>端末内のアプリ専用の領域にだけ保存します。当方のサーバーへは送信せず（これらのアプリにはアカウントもバックエンドもありません）、広告事業者を含む第三者とも共有しません。</li>
+  <li><strong>バックグラウンド：</strong>歩数はアプリを開いた時に読み取り、バックグラウンドでは読み取りません。</li>
 </ul>
 
-<h2>5. 利用目的</h2>
+<h3>5.2 位置情報</h3>
+<p>表で「あり」のアプリは、「現在地を使う」などのボタンを押した時だけ、ユーザーが選んだ許可（正確またはおおよそ）に基づいて位置を1回読み取ることがあります。出発点を設定するために使い、端末内にだけ保存し、どこにも送信しません。バックグラウンドで位置を追跡することはありません。</p>
+
+<h3>5.3 広告</h3>
+<p>当方のアプリの無料版は、広告事業者（<strong>Google AdMob</strong>（Google LLC）、<strong>Liftoff</strong>（Liftoff Mobile, Inc.）。どのアプリがどれを使うかは表のとおり）を通じて広告を表示します。これらの事業者は、広告ID、IPアドレス（およびそこから推定される大まかな位置）、端末情報、広告の操作データを自動的に収集・処理し、広告の配信・効果測定・パーソナライズを行うことがあります。健康・フィットネスのデータと正確な位置情報は、これらの事業者に提供しません。</p>
 <ul>
+  <li><strong>同意：</strong>必要な地域（EEA・英国など）では、広告の前に同意画面を表示し、後からアプリの設定で選択を変更できます。</li>
+  <li><strong>パーソナライズの停止：</strong>Android：設定 → Google → 広告 → 広告のパーソナライズをオプトアウト。iOS：設定 → プライバシー → トラッキング。</li>
+  <li><strong>詳細：</strong><a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank">Google 広告ポリシー</a>、<a href="https://policies.google.com/privacy?hl=ja" target="_blank">Google プライバシーポリシー</a>、<a href="https://liftoff.io/privacy-policy/" target="_blank">Liftoff プライバシーポリシー</a>。</li>
+</ul>
+
+<h3>5.4 購入</h3>
+<p>アプリ内課金は Google Play または App Store が処理します。当方は支払い情報を受け取らず、購入の有無のみを把握します。</p>
+
+<h3>5.5 ウェブサイトとお問い合わせ</h3>
+<ul>
+  <li>お問い合わせフォームやメールで提供された情報（氏名、メール、メッセージ内容）</li>
+  <li>サーバーログ（IPアドレス、ブラウザ種類、アクセス日時）</li>
+</ul>
+
+<h2>6. 利用目的</h2>
+<ul>
+  <li>各アプリの機能の提供（5.1・5.2）</li>
   <li>お問い合わせへの対応やサポート提供</li>
   <li>サービスの運営・維持・改善</li>
-  <li>Google AdMob による広告表示と最適化</li>
+  <li>広告の表示と効果測定（5.3）</li>
 </ul>
 
-<h2>6. Google AdMobの利用</h2>
-<p>当方は Google LLC が提供するモバイル広告配信プラットフォーム「Google AdMob」を使用し、アプリ内で広告を表示します。  
-AdMob は、広告ID、IPアドレス、利用状況データなどを自動的に収集・処理し、パーソナライズ広告または非パーソナライズ広告を配信します。</p>
-<p>詳細は <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank">Google 広告ポリシー</a> および <a href="https://policies.google.com/privacy?hl=ja" target="_blank">Google プライバシーポリシー</a> をご参照ください。</p>
-<p>パーソナライズ広告を無効化するには、端末の設定から以下の操作を行ってください：
-<ul>
-  <li>Android: 設定 → Google → 広告 → 広告のパーソナライズをオプトアウト</li>
-  <li>iOS: 設定 → プライバシー → トラッキング → Appにトラッキング許可を要求（オフ）</li>
-</ul>
-</p>
+<h2>7. 子どもについて</h2>
+<p>当方のアプリは、13歳未満（または現地の法令が定める年齢未満）の子どもを対象としておらず、子どもから個人情報を意図的に収集しません。なお、アプリごとの対象年齢は、各アプリのストア掲載情報に従います。</p>
+<p>子どもの個人情報が提供されたと思われる場合は、第13項のお問い合わせ先までご連絡ください。事実関係を確認し、該当する情報を削除するなど、法令に従って対応します。</p>
 
-<h2>7. 保有期間</h2>
-<p>個人情報は、上記利用目的の達成に必要な期間、または法令で定められた期間のみ保持します。期間終了後は安全に削除または匿名化します。</p>
+<h2>8. 保有期間</h2>
+<p>アプリが端末内に保存したデータは、ユーザーがアプリ内で削除するかアプリをアンインストールするまで残ります。そのほかの個人情報は、上記の目的の達成に必要な期間、または法令で定められた期間のみ保持し、その後に削除または匿名化します。</p>
 
-<h2>8. 第三者提供</h2>
+<h2>9. 第三者提供</h2>
 <p>以下の場合を除き、個人情報を第三者に提供しません：</p>
 <ul>
   <li>本人の同意がある場合</li>
   <li>法令に基づく場合</li>
-  <li>サービス運営に必要な場合（例：Google LLC の AdMob）</li>
+  <li>広告の表示と購入の処理に必要な範囲で、第5項に記載した広告事業者・決済プラットフォームに提供する場合</li>
 </ul>
 
-<h2>9. 安全管理措置</h2>
+<h2>10. 安全管理措置</h2>
 <p>当方は、個人情報の漏えい、紛失、改ざん、不正アクセス等を防止するため、合理的な安全管理措置を講じます。</p>
 
-<h2>10. 本人の権利</h2>
-<p>本人は、APPIに基づき、自己の個人情報の開示、訂正、削除、利用停止を請求できます。請求は下記連絡先まで行ってください。</p>
+<h2>11. 本人の権利</h2>
+<p>本人は、APPIに基づき、自己の個人情報の開示、訂正、削除、利用停止を請求できます。EEA・英国の利用者は、さらに、アクセス、訂正、消去、処理の制限、異議、データポータビリティ、同意の撤回の権利と、監督当局に苦情を申し立てる権利を持ちます。端末の設定（ヘルスコネクトを含む）でいつでも許可を取り消せ、アプリ内で保存データをリセットでき、アンインストールもできます。請求は下記連絡先まで行ってください。</p>
 
-<h2>11. ポリシー変更</h2>
-<p>必要に応じて本ポリシーを改訂することがあります。変更は本ページに掲載した時点で効力を生じます。</p>
+<h2>12. ポリシー変更</h2>
+<p>必要に応じて本ポリシーを改訂することがあります。変更は本ページに掲載した時点で効力を生じ、上の日付を更新します。アプリが扱うデータが変わる場合は、そのアプリを公開する前に、第4項・第5項へ反映します。</p>
 
-<h2>12. お問い合わせ</h2>
-<p>本プライバシーポリシーまたは個人情報の取扱いに関するお問い合わせは以下までお願いします：  
-dyinarobotics@gmail.com</p>
+<h2>13. お問い合わせ</h2>
+<p>本ポリシーまたは個人情報の取扱いに関するお問い合わせ：dyinarobotics@gmail.com</p>
 
-<p>© 2025 Dyina. All rights reserved.</p>
+<p>© 2025–2026 Dyina. All rights reserved.</p>
 </div>
 
 </body>
