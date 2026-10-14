@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- ============ English version ============ -->
 <div data-lang="en">
-<p><strong>Last updated:</strong> October 9, 2026</p>
+<p><strong>Last updated:</strong> October 14, 2026</p>
 
 <h2>1. Who We Are</h2>
 <p>The operator of this website and our apps (“we”, “us”) is Dyina, email: dyinarobotics@gmail.com. This policy applies to all apps and websites we publish.</p>
@@ -47,8 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <h2>4. Our Apps and the Data They Use</h2>
 <p>Each app uses only the data types listed for it. An app that is not marked for a data type does not access that data. Details for each data type are in section 5.</p>
 <table>
-<tr><th>App</th><th>Platform</th><th>Health / fitness data (steps)</th><th>Location</th><th>Ads</th><th>Purchases</th></tr>
-<tr><td>Moon Pedometer<br>(com.dyina.moonpedometer)</td><td>Android</td><td>Yes (steps)</td><td>Yes (one time, when you tap the button)</td><td>Google AdMob</td><td>Yes (Google Play)</td></tr>
+<tr><th>App</th><th>Platform</th><th>Health / fitness data (steps)</th><th>Location</th><th>Ads</th><th>Purchases</th><th>Account data / photos</th></tr>
+<tr><td>Moon Pedometer<br>(com.dyina.moonpedometer)</td><td>Android</td><td>Yes (steps)</td><td>Yes (one time, when you tap the button)</td><td>Google AdMob</td><td>Yes (Google Play)</td><td>No</td></tr>
+<tr><td>FollowPop<br>(com.dyina.followpop)</td><td>Android, iOS</td><td>No</td><td>No</td><td>Google AdMob</td><td>Yes (Google Play, App Store)</td><td>Yes (Instagram account information; photos you choose). See 5.6</td></tr>
 <!-- 新しいアプリは、この表に1行足す。新しい種類のデータ（カメラ・連絡先など）を扱う時は、第5項に節を足す -->
 </table>
 
@@ -82,9 +83,46 @@ document.addEventListener('DOMContentLoaded', () => {
   <li>Server logs (IP address, browser type, access date and time)</li>
 </ul>
 
+<h3 id="followpop">5.6 FollowPop (Instagram account information and photos)</h3>
+<p>FollowPop shows the number of followers of a shop’s Instagram account on a tablet or phone in the shop. It uses Instagram’s official mechanism (Instagram API with Instagram Login) provided by Meta Platforms, Inc.</p>
+<table>
+<tr><th>Information</th><th>Purpose</th><th>Where it is stored</th></tr>
+<tr><td>Instagram access token (valid for 60 days; the app renews it automatically)</td><td>To read the basic information of the shop’s Instagram professional account</td><td><strong>Only in the secure storage of your device</strong> (Android Keystore / iOS Keychain)</td></tr>
+<tr><td>Instagram username, display name, profile picture URL, and number of followers</td><td>To show them on the shop’s screen</td><td>Only on your device</td></tr>
+<tr><td>Messages, display settings, and the PIN that the shop sets</td><td>To show the screen and to protect the settings</td><td>Only on your device (the PIN is in secure storage)</td></tr>
+<tr><td>Photos the shop chooses (logo, background photo, QR code image)</td><td>To show them on the shop’s screen. Only the photos you choose from your device are copied, after cropping, into the app’s private storage. Location and other metadata are not read.</td><td>Only on your device. Removing the photo in the app or uninstalling the app deletes it.</td></tr>
+</table>
+<p><strong>The only permission FollowPop requests from Instagram is reading the basic information of the professional account (<code>instagram_business_basic</code>).</strong> It does not post, send or read messages, or read comments. It cannot get the list of followers or who followed; only the number is available. It does not collect any information about customers who visit the shop (the QR code only shows the URL of the shop’s Instagram profile).</p>
+
+<h4>Server used only when you log in</h4>
+<p>To log in, a temporary code from Instagram must be exchanged for an access token, which requires the developer’s secret key. Because a key placed in the app could be extracted, only this exchange is done on Google LLC’s Firebase (Cloud Functions, Cloud Firestore, and Firebase App Check).</p>
+<ul>
+  <li>The access token is held temporarily only until it is handed to the device that logged in, and is <strong>deleted as soon as it is handed over</strong>. If you stop logging in midway, it becomes unusable after 10 minutes and is deleted automatically (normally within 24 hours).</li>
+  <li>The server does <strong>not</strong> keep access tokens, usernames, or follower counts, and does not write them to logs.</li>
+  <li>To block modified apps and automated programs, Firebase App Check verifies the app (Android: Play Integrity; iOS: App Attest). Google and Apple process information about the device and the app for this purpose.</li>
+  <li>Getting the follower count and renewing the access token are done directly between your device and Instagram, not through this server.</li>
+</ul>
+
+<h4>Ads and purchases</h4>
+<ul>
+  <li>The free version shows Google AdMob ads (a banner on the shop screen, a full-screen ad when the app opens, and a video ad that you choose to watch to unlock a design or effect). Advertising identifiers may be used. Where required (for example in the EEA and the UK), consent is requested (UMP), and you can change it in the app’s settings.</li>
+  <li>Buyers of the paid (Premium) version see no ads, and the ad SDK is not even started.</li>
+  <li>Purchases are processed by Google Play or the App Store; we do not receive your payment details.</li>
+</ul>
+
+<h4 id="followpop-data-deletion">Deleting your data</h4>
+<ul>
+  <li>In the app’s settings, tap the delete button on an Instagram account to remove that account’s access token and display information from your device.</li>
+  <li>Uninstalling the app deletes all information stored on your device.</li>
+  <li>The server keeps no such information, so there is nothing to delete on the server.</li>
+  <li>To disconnect FollowPop on the Instagram side, remove FollowPop in Instagram under Settings → Website permissions (apps and websites).</li>
+  <li>If you have questions, contact us at the address in section 13.</li>
+</ul>
+<p>Instagram is a service of Meta Platforms, Inc. (<a href="https://privacycenter.instagram.com/policy" target="_blank">Instagram Privacy Policy</a>). Firebase and AdMob are services of Google LLC, and information is processed under its <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>.</p>
+
 <h2>6. Purpose of Use</h2>
 <ul>
-  <li>Providing the features of each app (section 5.1–5.2)</li>
+  <li>Providing the features of each app (section 5.1, 5.2 and 5.6)</li>
   <li>Responding to inquiries and providing support</li>
   <li>Operating, maintaining, and improving our services</li>
   <li>Displaying and measuring advertisements (section 5.3)</li>
@@ -102,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <li>When we have your consent</li>
   <li>When required by law</li>
   <li>To the advertising providers and payment platforms listed in section 5, to the extent necessary to show ads and process purchases</li>
+  <li>For FollowPop: to Meta Platforms, Inc. (Instagram) to log in and read the account information you authorize, and to Google LLC (Firebase) to hand over the login token and verify the app, as described in section 5.6</li>
 </ul>
 
 <h2>10. Security Measures</h2>
@@ -121,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- ============ 日本語版 ============ -->
 <div data-lang="ja">
-<p><strong>最終更新日:</strong> 2026年10月9日</p>
+<p><strong>最終更新日:</strong> 2026年10月14日</p>
 
 <h2>1. 運営者</h2>
 <p>本サイトおよび当方のアプリの運営者（以下「当方」）は Dyina（メール：dyinarobotics@gmail.com）です。本ポリシーは、当方が公開するすべてのアプリとウェブサイトに適用されます。</p>
@@ -135,8 +174,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <h2>4. アプリと、アプリが扱うデータ</h2>
 <p>各アプリは、下の表で「あり」とされたデータ種類だけを扱います。表で該当しないデータ種類には、そのアプリはアクセスしません。データ種類ごとの詳細は第5項に記載します。</p>
 <table>
-<tr><th>アプリ</th><th>対応OS</th><th>健康・フィットネス（歩数）</th><th>位置情報</th><th>広告</th><th>購入</th></tr>
-<tr><td>Moon Pedometer<br>(com.dyina.moonpedometer)</td><td>Android</td><td>あり（歩数）</td><td>あり（ボタンを押した時に1回）</td><td>Google AdMob</td><td>あり（Google Play）</td></tr>
+<tr><th>アプリ</th><th>対応OS</th><th>健康・フィットネス（歩数）</th><th>位置情報</th><th>広告</th><th>購入</th><th>アカウント情報・写真</th></tr>
+<tr><td>Moon Pedometer<br>(com.dyina.moonpedometer)</td><td>Android</td><td>あり（歩数）</td><td>あり（ボタンを押した時に1回）</td><td>Google AdMob</td><td>あり（Google Play）</td><td>なし</td></tr>
+<tr><td>FollowPop<br>(com.dyina.followpop)</td><td>Android・iOS</td><td>なし</td><td>なし</td><td>Google AdMob</td><td>あり（Google Play・App Store）</td><td>あり（Instagram のアカウント情報、選んだ写真）→ 5.6</td></tr>
 <!-- 新しいアプリは、この表に1行足す。新しい種類のデータ（カメラ・連絡先など）を扱う時は、第5項に節を足す -->
 </table>
 
@@ -170,9 +210,46 @@ document.addEventListener('DOMContentLoaded', () => {
   <li>サーバーログ（IPアドレス、ブラウザ種類、アクセス日時）</li>
 </ul>
 
+<h3 id="followpop-ja">5.6 FollowPop（Instagram のアカウント情報と写真）</h3>
+<p>FollowPop は、お店の Instagram のフォロワー数を店頭のタブレットやスマホに表示するアプリです。Meta Platforms, Inc. の公式の仕組み（Instagram API with Instagram Login）を使います。</p>
+<table>
+<tr><th>情報</th><th>内容・目的</th><th>保存先</th></tr>
+<tr><td>Instagram のアクセストークン（有効期間60日。アプリが自動で更新します）</td><td>お店の Instagram プロアカウントの基本情報を読み取るための鍵</td><td><strong>お使いの端末内の安全な保管場所のみ</strong>（Android Keystore／iOS Keychain）</td></tr>
+<tr><td>Instagram のユーザー名・表示名・プロフィール画像の URL・フォロワー数</td><td>店頭の画面に表示するため</td><td>お使いの端末内のみ</td></tr>
+<tr><td>お店が入力した一言・サンキューの文言・表示の設定・暗証番号</td><td>店頭の画面の表示と、設定の保護のため</td><td>お使いの端末内のみ（暗証番号は安全な保管場所）</td></tr>
+<tr><td>お店が選んだ写真（ロゴ・背景写真・QRコードの画像）</td><td>店頭の画面に表示するため。端末の写真から選ばれたものだけを、切り抜きのうえ、アプリ専用の場所に写して使います（位置情報などの付帯情報は読み取りません）</td><td>お使いの端末内のみ。アプリで写真を外すか、アンインストールすると削除されます</td></tr>
+</table>
+<p><strong>FollowPop が Instagram に求める権限は、プロアカウントの基本情報の読み取り（<code>instagram_business_basic</code>）だけです。</strong>投稿・メッセージの送受信や読み取り・コメントの読み取りはしません。フォロワーの一覧や、誰がフォローしたかは取得できません（取得できるのは人数だけです）。来店されたお客様の情報は一切取得しません（QRコードはお店の Instagram のプロフィールの URL を表示するだけです）。</p>
+
+<h4>ログインのときだけ使うサーバー</h4>
+<p>Instagram のログインでは、Instagram から受け取った一時的なコードをアクセストークンに交換するために、開発者の秘密鍵が必要です。秘密鍵をアプリに入れると抜き取られるおそれがあるため、この交換だけを Google LLC の Firebase（Cloud Functions、Cloud Firestore、Firebase App Check）上で行います。</p>
+<ul>
+  <li>交換したアクセストークンは、ログインした端末に渡すまでの間だけ一時的に保管し、<strong>渡した時点で削除します</strong>。ログインを途中でやめた場合は、10分で使えなくなり、その後自動で削除します（通常24時間以内）。</li>
+  <li>サーバーには、アクセストークン・ユーザー名・フォロワー数を<strong>残しません</strong>。サーバーのログにも記録しません。</li>
+  <li>改造されたアプリや自動プログラムからの不正な呼び出しを防ぐため、Firebase App Check でアプリの正当性を確認します（Android：Play Integrity、iOS：App Attest）。そのために、Google・Apple が端末・アプリの情報を処理します。</li>
+  <li>フォロワー数の取得とアクセストークンの更新は、端末から Instagram へ直接行い、このサーバーを通りません。</li>
+</ul>
+
+<h4>広告・購入</h4>
+<ul>
+  <li>無料版では Google AdMob の広告（店頭画面のバナー、起動時の全画面広告、デザインや演出を解放するときにご自身で選んで見る動画広告）を表示します。広告識別子を利用する場合があります。EEA・英国など同意が必要な地域では同意（UMP）を取得し、アプリの設定から変更できます。</li>
+  <li>買い切り（プレミアム版）の購入者には、広告を表示せず、広告 SDK の初期化も行いません。</li>
+  <li>購入は Google Play または App Store が処理し、決済情報は当方に渡りません。</li>
+</ul>
+
+<h4 id="followpop-data-deletion-ja">データの削除</h4>
+<ul>
+  <li>アプリの設定画面で、Instagram のアカウントの削除ボタンを押すと、そのアカウントのアクセストークンと表示用の情報が端末から削除されます。</li>
+  <li>アプリをアンインストールすると、端末内のすべての情報が削除されます。</li>
+  <li>サーバーには情報を残していないため、サーバー側で削除する情報はありません。</li>
+  <li>Instagram 側の連携を解除するには、Instagram の「設定 → ウェブサイトのアクセス許可（アプリとウェブサイト）」から FollowPop を削除してください。</li>
+  <li>ご不明な点は、第13項のお問い合わせ先までご連絡ください。</li>
+</ul>
+<p>Instagram は Meta Platforms, Inc. のサービスです（<a href="https://privacycenter.instagram.com/policy" target="_blank">Instagram プライバシーポリシー</a>）。Firebase・AdMob は Google LLC のサービスで、同社の<a href="https://policies.google.com/privacy?hl=ja" target="_blank">プライバシーポリシー</a>に従って情報が処理されます。</p>
+
 <h2>6. 利用目的</h2>
 <ul>
-  <li>各アプリの機能の提供（5.1・5.2）</li>
+  <li>各アプリの機能の提供（5.1・5.2・5.6）</li>
   <li>お問い合わせへの対応やサポート提供</li>
   <li>サービスの運営・維持・改善</li>
   <li>広告の表示と効果測定（5.3）</li>
@@ -191,6 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <li>本人の同意がある場合</li>
   <li>法令に基づく場合</li>
   <li>広告の表示と購入の処理に必要な範囲で、第5項に記載した広告事業者・決済プラットフォームに提供する場合</li>
+  <li>FollowPop について、第5.6項に記載のとおり、ログインとご本人が許可したアカウント情報の読み取りのために Meta Platforms, Inc.（Instagram）へ、ログインのトークンの受け渡しとアプリの正当性の確認のために Google LLC（Firebase）へ提供する場合</li>
 </ul>
 
 <h2>10. 安全管理措置</h2>
